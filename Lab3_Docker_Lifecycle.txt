@@ -1,0 +1,44 @@
+
+docker pull httpd
+docker image ls
+docker image history httpd
+docker container create httpd
+docker container ls -a
+docker container start < container id/Name >
+docker container ls
+docker container stop < container id/Name >
+docker container ls -a
+
+docker container start < container id/Name >
+docker container pause < container id/Name >
+docker container ls -a
+docker container unpause < container id/Name >
+docker container ls -a
+
+docker exec -it < container id/name > bash
+
+# cd htdocs
+# apt update
+# apt install wget -y
+# rm index.html
+# wget files.cloudthat.training/devops/docker-essentials/index.html
+# exit
+
+docker commit < container id/name > myhttpd:version1
+
+docker image ls
+
+docker run -d -p 8080:80 myhttpd:version1
+
+curl < public IP>:8080
+
+docker container ls
+docker logs < container id/name >
+docker stats < container id/name >
+
+docker container ls
+docker stop < container id/name >
+docker image ls
+docker image rm < image id/name > < image id/name >
+docker image ls
+docker image ls -a

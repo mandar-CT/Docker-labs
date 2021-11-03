@@ -1,0 +1,62 @@
+#Task1
+docker run hello-world
+
+
+#Task2 - Basic Docker commands to run the Container in Interactive Mode
+
+docker pull ubuntu
+docker image ls
+docker run -it --name ct1 ubuntu
+# touch f1 f2 f3
+# ls
+# exit
+docker ps
+docker ps -a
+docker run -it --name ct2 ubuntu
+Ctrl + P +Q
+docker ps
+
+docker exec -it < container id/name > /bin/sh
+OR
+docker exec -it ct2 /bin/sh
+# exit
+
+docker ps
+
+docker attach < container id/name >
+OR
+docker attach ct2
+
+# exit
+docker ps
+docker ps -a
+
+
+
+#Task3  - Port Mapping from Docker Host to Container
+
+docker run -d -p 80:80 httpd
+docker ps
+  
+docker exec -it < container id/name > /bin/bash
+
+# exit
+
+docker ps
+
+docker exec -it < container id/name > /bin/bash
+
+# kill 1
+
+docker ps -a
+
+
+docker container stop < container id/name >
+docker container rm < container id/name >
+docker image rm < image id >
+
+# Clean-up all containers from the host
+docker container rm -f $(docker container ls -aq)
+
+# Clean-up all Docker Images from the host
+docker image rm -f $(docker image ls -aq)
